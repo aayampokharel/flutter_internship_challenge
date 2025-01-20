@@ -16,7 +16,13 @@ Widget personalReview(
       ),
       trailing: Row(
         mainAxisSize: MainAxisSize.min,
-        children: [Icon(Icons.star), stringBold(rating)],
+        children: [
+          Icon(
+            Icons.star,
+            color: Colors.yellow[700],
+          ),
+          stringBold(rating)
+        ],
       ),
       onTap: () {});
 }

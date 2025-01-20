@@ -22,14 +22,14 @@ Widget recommendation_card(
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Icon(Icons.location_on),
+                Icon(Icons.location_on, color: Colors.blueGrey),
                 stringLightColored(place),
               ],
             ),
             SizedBox(width: 100),
             Row(
               children: [
-                Icon(Icons.star),
+                Icon(Icons.star, color: Colors.yellow[700]),
                 stringLightColored(rating, color: Colors.yellow[900]),
                 stringLightColored("(532)"),
                 SizedBox(width: 12),

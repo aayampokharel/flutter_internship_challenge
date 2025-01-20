@@ -22,23 +22,37 @@ class DetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: stringBold("Detail"),
-          centerTitle: true,
-        ),
-        body: SingleChildScrollView(
+      appBar: AppBar(
+        title: stringBold("Detail"),
+        centerTitle: true,
+      ),
+      body: SafeArea(
+        child: SingleChildScrollView(
           child: Column(
             children: [
-              //img
-              //container content
-              Container(
-                  width: double.infinity,
-                  height: 300,
-                  color: Colors.red,
-                  child: Image.asset("images/lounge.jpg")),
-              Detail_Card(),
+              Stack(
+                clipBehavior: Clip.none,
+                children: [
+                  SizedBox(height: 1650), //@ base layer in stack .
+                  Image.asset(
+                    "images/lounge.jpg",
+                    width: double.infinity,
+                    height: 300,
+                    fit: BoxFit.cover,
+                  ),
+
+                  Positioned(
+                    top: 270,
+                    left: 0,
+                    right: 0,
+                    child: Detail_Card(),
+                  ),
+                ],
+              ),
             ],
           ),
-        ));
+        ),
+      ),
+    );
   }
 }

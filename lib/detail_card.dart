@@ -13,6 +13,11 @@ class Detail_Card extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(50),
+        color: Colors.white,
+      ),
+      height: 1300,
       width: double.infinity,
       child: Padding(
         padding: EdgeInsets.all(30.0),
@@ -35,23 +40,39 @@ class Detail_Card extends StatelessWidget {
                       child: Row(
                         children: [
                           //! icon to be added .
-                          stringLightColored("Veum Point, Michikoton"),
-                          SizedBox(width: 25),
-                          Icon(Icons.star),
+                          Icon(Icons.location_on, color: Colors.blue[900]),
+                          stringLightColored(" Veum Point, Michikoton"),
+                          SizedBox(width: 30),
+                          Icon(Icons.star, color: Colors.yellow[700]),
                           stringBold("4.6", size: 14),
                         ],
                       ),
                     ),
                   ],
                 ),
-                Icon(Icons.circle),
+                Container(
+                  padding: EdgeInsets.all(3.0), // Add padding around the image
+                  decoration: BoxDecoration(
+                    color: const Color.fromARGB(
+                        86, 65, 152, 192), // Circle background color
+                    shape: BoxShape.circle, // Makes the container circular
+                  ),
+                  child: Image.asset(
+                    "images/cube.png",
+                    width: 50,
+                    height: 50,
+                  ),
+                )
               ],
             ), //@ end of aston vill hotel Row .
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 // Wrap the "Common Facilities" text with an Expanded widget
-                stringBold("Common Facilities"),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: stringBold("Common Facilities"),
+                ),
                 // Wrap the "See All" text with an Expanded widget
                 TextButton(
                   onPressed: () {},
@@ -63,21 +84,26 @@ class Detail_Card extends StatelessWidget {
               ],
             ),
 
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                circularIcon(Icons.wind_power, "AC"),
-                circularIcon(Icons.business_outlined, "Restaurant"),
-                circularIcon(Icons.waves_outlined, "Swimming\n Pool"),
-                circularIcon(Icons.numbers, "24-Hours \nFront Desk"),
-              ],
+            Padding(
+              padding: const EdgeInsets.fromLTRB(8.0, 8.0, 8.0, 20.0),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  circularIcon("images/wind.png", "AC"),
+                  circularIcon("images/restaurant.png", "Restaurant"),
+                  circularIcon("images/water-waves.png", "Swimming\n Pool"),
+                  circularIcon(
+                      "images/twenty_four.png", "24-Hours \nFront Desk"),
+                ],
+              ),
             ),
 
             //@end of Row of icons .
             stringBold("Description", size: 25),
 
             Padding(
-              padding: const EdgeInsets.fromLTRB(0, 0, 0, 18),
+              padding: const EdgeInsets.fromLTRB(0, 15, 0, 18),
               child: RichText(
                 text: TextSpan(
                   children: [
@@ -85,7 +111,7 @@ class Detail_Card extends StatelessWidget {
                       text:
                           'The Ideal place for those looking for a luxurious and tranquil holiday experience with stunning sea views ....',
                       style: TextStyle(
-                        fontSize: 20,
+                        fontSize: 15,
                         color: Colors.black87,
                         fontWeight: FontWeight.w500,
                       ),
@@ -96,7 +122,7 @@ class Detail_Card extends StatelessWidget {
                     TextSpan(
                       text: 'Read More',
                       style: TextStyle(
-                        fontSize: 18,
+                        fontSize: 16,
                         color: Colors.blue[900],
                         fontWeight: FontWeight.bold,
                       ),
@@ -120,22 +146,34 @@ class Detail_Card extends StatelessWidget {
               ],
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(15.0),
               child: Container(
-                color: Colors.blue,
-                child: Center(child: Text("google map pic ")),
-                height: 200,
-                width: double.infinity,
+                padding: EdgeInsets.fromLTRB(10, 10, 10, 20),
+                decoration: BoxDecoration(
+                  color: Colors.grey[200],
+                  borderRadius: BorderRadius.circular(16), // Rounded corners
+                ),
+                child: Column(
+                  children: [
+                    Container(
+                      color: Colors.blue,
+                      child: Center(child: Text("google map pic ")),
+                      height: 200,
+                      width: double.infinity,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(Icons.location_on, color: Colors.blue[900]),
+                        stringLightColored("9175 Chestnut StreetRome,NY 13440",
+                            color: Colors.grey),
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(Icons.location_on),
-                stringLightColored("9175 Chestnut StreetRome,NY 13440",
-                    color: Colors.grey),
-              ],
-            ),
+
             Padding(
               padding: const EdgeInsets.fromLTRB(0, 25, 0, 15),
               child: Row(

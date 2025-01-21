@@ -17,7 +17,7 @@ class Detail_Card extends StatelessWidget {
         borderRadius: BorderRadius.circular(50),
         color: Colors.white,
       ),
-      height: 1300,
+      height: 1350,
       width: double.infinity,
       child: Padding(
         padding: EdgeInsets.all(30.0),
@@ -51,11 +51,10 @@ class Detail_Card extends StatelessWidget {
                   ],
                 ),
                 Container(
-                  padding: EdgeInsets.all(3.0), // Add padding around the image
+                  padding: EdgeInsets.all(3.0),
                   decoration: BoxDecoration(
-                    color: const Color.fromARGB(
-                        86, 65, 152, 192), // Circle background color
-                    shape: BoxShape.circle, // Makes the container circular
+                    color: const Color.fromARGB(86, 65, 152, 192),
+                    shape: BoxShape.circle,
                   ),
                   child: Image.asset(
                     "images/cube.png",
@@ -68,12 +67,10 @@ class Detail_Card extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                // Wrap the "Common Facilities" text with an Expanded widget
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: stringBold("Common Facilities"),
                 ),
-                // Wrap the "See All" text with an Expanded widget
                 TextButton(
                   onPressed: () {},
                   child: stringLightColored(
@@ -156,11 +153,18 @@ class Detail_Card extends StatelessWidget {
                 child: Column(
                   children: [
                     Container(
-                      color: Colors.blue,
-                      child: Center(child: Text("google map pic ")),
+                      decoration: BoxDecoration(
+                        borderRadius:
+                            BorderRadius.circular(16), // Rounded corners
+                      ),
+                      child: Image.asset(
+                        "images/googlemap.png",
+                        fit: BoxFit.cover,
+                      ),
                       height: 200,
                       width: double.infinity,
                     ),
+                    SizedBox(height: 20),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -185,11 +189,13 @@ class Detail_Card extends StatelessWidget {
               ),
             ),
             personalReview(
+                image: "images/profilepic_1.jpg",
                 name: "Kim Borrdy",
                 description:
                     "Amazing!The room is good than the picture . Thanks for amazing experience!",
                 rating: "4.5"),
             personalReview(
+                image: "images/profilepic_2.jpg",
                 name: "Mirai Kamzuki",
                 description:
                     "The service is on point ,and I really like the facilities. Good job!",
@@ -209,12 +215,14 @@ class Detail_Card extends StatelessWidget {
               child: Row(
                 children: [
                   recommendation_card(
+                      img: "images/hotel_img.jpg",
                       name: "Lumiére Palace",
                       place: "Las Vegas,NV",
                       rating: "4.4",
                       discountedPrice: "\$210",
                       fullPrice: "\$345"),
                   recommendation_card(
+                    img: "images/ocean_resort.jpg",
                     name: "Ocean View Resort",
                     place: "Miami, FL",
                     rating: "4.7",
@@ -222,6 +230,7 @@ class Detail_Card extends StatelessWidget {
                     fullPrice: "\$320",
                   ),
                   recommendation_card(
+                    img: "images/mountain_retreat.jpg",
                     name: "Mountain Retreat",
                     place: "Aspen, CO",
                     rating: "4.9",

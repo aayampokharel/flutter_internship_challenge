@@ -2,12 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter_internship_challenge/text_formatting.dart';
 
 Widget personalReview(
-    {String name = "no Name",
+    {String? image,
+    String name = "no Name",
     String description = "...",
     String rating = "4.5"}) {
   return ListTile(
       leading: CircleAvatar(
-        child: Icon(Icons.circle), //@image to be replacing this.
+        child: image == null
+            ? Icon(Icons.person_off)
+            : ClipOval(
+                child: Image.asset(
+                  image,
+                  fit: BoxFit.cover,
+                  width: double.infinity,
+                  height: double.infinity,
+                ),
+              ),
       ),
       title: stringBold(name),
       subtitle: Padding(

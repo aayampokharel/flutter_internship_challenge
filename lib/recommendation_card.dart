@@ -30,9 +30,8 @@ Widget recommendation_card(
             children: [
               Container(
                 decoration: BoxDecoration(
-                  // color: Colors.grey[200],
                   color: Colors.blue,
-                  borderRadius: BorderRadius.circular(16), // Rounded corners
+                  borderRadius: BorderRadius.circular(16),
                 ),
                 width: 100,
                 height: 100,
@@ -58,8 +57,6 @@ Widget recommendation_card(
                       ),
                     ],
                   ),
-                  //SizedBox(height: 20),
-
                   Row(
                     children: [
                       Icon(Icons.star, color: Colors.yellow[700]),
